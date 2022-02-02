@@ -83,22 +83,22 @@ function RoadMap() {
           </div>
           <div className='container right'>
             <div className='content'>
-              <p>Whitelisting New Collection on AH: 01/07/22.</p>
+              <p>Whitelisting New Collection on AH: 02/07/22.</p>
             </div>
           </div>
           <div className='container left'>
             <div className='phase'>Phase 2 Q1/22</div>
             <div className='content'>
               <p>
-                1st Main Drop (Factory Buildings and Machines: Scheduled from
-                01/07/22 to 01/14/22 starting at 1800 UCT.​​
+                1st Main Drop (Factory Buildings and Machines: Scheduled on
+                03/04/22 starting at 1800 UCT.​​
               </p>
             </div>
           </div>
           <div className='container left'>
             <div className='content'>
               <p>
-                UI Close Beta Testing: Soft Scheduled for January 8th, 2022
+                UI Close Beta Testing: Soft Scheduled for February 18th, 2022
                 starting at 1800 UTC.
               </p>
             </div>
@@ -106,31 +106,31 @@ function RoadMap() {
           <div className='container right'>
             <div className='content'>
               <p>
-                2nd Main Drop (Laborers Packs): Soft Scheduled from 01/14/22 to
-                01/21/22. at 1800 UTC
+                2nd Main Drop (Laborers Packs): Soft Scheduled on
+                03/11/22. at 1800 UTC
               </p>
             </div>
           </div>
           <div className='container left'>
             <div className='content'>
-              <p>UI Open Beta Testing: Soft Scheduled for 15th January 2022.</p>
+              <p>UI Open Beta Testing: Soft Scheduled for 4th March 2022.</p>
             </div>
           </div>
           <div className='container right'>
             <div className='content'>
-              <p>Tokens Listed on Alcor: January 20th, 2022</p>
+              <p>Tokens Listed on Alcor: March 4th, 2022</p>
             </div>
           </div>
           <div className='container left'>
             <div className='content'>
-              <p>Game Launches: Soft Scheduled for January 21st 2022.</p>
+              <p>Game Launches: Scheduled for March 4th 2022.</p>
             </div>
           </div>
           <div className='container right'>
             <div className='content'>
               <p>
-                Production of Raw Materials & Energy Starts: Soft scheduled for
-                January 21st, 2022
+                Production of Raw Materials & Energy Starts: scheduled for
+                March 4th, 2022
               </p>
             </div>
           </div>
@@ -147,7 +147,7 @@ function RoadMap() {
           </div>
           <div className='container left'>
             <div className='content'>
-              <p>Monthly Sneaker Drop Event: TBD.​​​​</p>
+              <p>Monthly Sneaker Drop Event: Q3-Q4/22.​​​​</p>
             </div>
           </div>
           <div className='container left'>
