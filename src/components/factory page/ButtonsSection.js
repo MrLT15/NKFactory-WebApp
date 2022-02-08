@@ -21,6 +21,15 @@ function ButtonsSection() {
   return (
     <Box sx={{ mt: '82px' }}>
       <Box sx={{ px: 5 }} className={classes.boxPositionEnd}>
+      <Button
+          sx={{ mx: 5, px: 5, py: 2 }}
+          variant='contained'
+          color='primary'
+        >
+          <Link color='text.primary' href='/' underline='none'>
+            Welcome Page
+          </Link>
+        </Button>
         <Button
           sx={{ mx: 3, py: 2, px: 2 }}
           variant='contained'

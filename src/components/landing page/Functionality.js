@@ -1,188 +1,195 @@
-import React from 'react';
-import { Typography, Box, Grid } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import React from "react";
+import { Typography, Box, Grid } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 // Images
 // Image Building
-import imgBuildingHeader from '../../assets/img/Industrial-min.png';
+import imgBuildingHeader from "../../assets/img/Industrial-min.png";
 
 // Images Clothes
-import imgRubberAdvanced from '../../assets/img/RubberAdvanced.png';
-import imgRubberApprentice from '../../assets/img/RubberApprentice.png';
+import imgRubberAdvanced from "../../assets/img/RubberAdvanced.png";
+import imgRubberApprentice from "../../assets/img/RubberApprentice.png";
 
 // Image Lines
-import imgLineRight from '../../assets/img/line-right.svg';
-import imgMultiplLines from '../../assets/img/multipl-lines.svg';
+import imgLineRight from "../../assets/img/line-right.svg";
+import imgMultiplLines from "../../assets/img/multipl-lines.svg";
+import { minHeight } from "@mui/system";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
   boxAbout: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginBottom: '128px',
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "128px",
   },
   fontTitleAbout: {
-    fontWeight: '700 !important',
+    fontWeight: "700 !important",
   },
   imageLineRotate: {
-    marginLeft: '32px',
-    transform: 'rotate(180deg)',
-    [theme.breakpoints.between('md', 'lg')]: {
-      transform: 'rotate(270deg)',
-      marginLeft: '0',
-      marginTop: '32px',
+    marginLeft: "32px",
+    transform: "rotate(180deg)",
+    [theme.breakpoints.between("md", "lg")]: {
+      transform: "rotate(270deg)",
+      marginLeft: "0",
+      marginTop: "32px",
     },
-    [theme.breakpoints.between('xs', 'md')]: {
-      transform: 'rotate(270deg)',
-      marginLeft: '0',
-      marginTop: '32px',
+    [theme.breakpoints.between("xs", "md")]: {
+      transform: "rotate(270deg)",
+      marginLeft: "0",
+      marginTop: "32px",
     },
   },
   boxFlexDirectionColumn: {
-    display: 'flex',
-    flexDirection: 'column',
-    [theme.breakpoints.between('md', 'lg')]: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      '& img': {
-        margin: '0 42px',
+    display: "flex",
+    flexDirection: "column",
+    [theme.breakpoints.between("md", "lg")]: {
+      flexDirection: "row",
+      justifyContent: "center",
+      "& img": {
+        margin: "0 42px",
       },
     },
-    [theme.breakpoints.between('xs', 'md')]: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      '& img': {
-        margin: '0 12px',
+    [theme.breakpoints.between("xs", "md")]: {
+      flexDirection: "row",
+      justifyContent: "center",
+      "& img": {
+        margin: "0 12px",
       },
     },
   },
   textBorder: {
-    padding: '16px',
+    padding: "16px",
     border: `3px solid #fff`,
-    height: '30%',
-    marginLeft: '15px',
-    alignSelf: 'end',
-    [theme.breakpoints.between('md', 'lg')]: {
-      height: '50%',
+    height: "30%",
+    marginLeft: "15px",
+    alignSelf: "end",
+    [theme.breakpoints.between("md", "lg")]: {
+      height: "50%",
     },
-    [theme.breakpoints.between('xs', 'md')]: {
-      height: '50%',
+    [theme.breakpoints.between("xs", "md")]: {
+      height: "50%",
     },
   },
   flexAlignCenterJustifyCenter: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    '& .line': {
-      marginLeft: '32px',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    "& .line": {
+      marginLeft: "32px",
     },
-    [theme.breakpoints.between('md', 'lg')]: {
-      flexDirection: 'column',
-      padding: '10% 0',
-      '& .line': {
-        transform: 'rotate(90deg)',
-        marginTop: '48px',
-        marginBottom: '32px',
+    [theme.breakpoints.between("md", "lg")]: {
+      flexDirection: "column",
+      padding: "10% 0",
+      "& .line": {
+        transform: "rotate(90deg)",
+        marginTop: "48px",
+        marginBottom: "32px",
       },
-      '& .multipleLines': {
-        transform: 'rotate(90deg)',
+      "& .multipleLines": {
+        transform: "rotate(90deg)",
       },
     },
-    [theme.breakpoints.between('xs', 'md')]: {
-      flexDirection: 'column',
-      padding: '10% 0',
-      '& .line': {
-        transform: 'rotate(90deg)',
-        marginTop: '48px',
-        marginBottom: '32px',
+    [theme.breakpoints.between("xs", "md")]: {
+      flexDirection: "column",
+      padding: "10% 0",
+      "& .line": {
+        transform: "rotate(90deg)",
+        marginTop: "48px",
+        marginBottom: "32px",
       },
-      '& .multipleLines': {
-        transform: 'rotate(90deg)',
+      "& .multipleLines": {
+        transform: "rotate(90deg)",
       },
     },
   },
   flexAlignSpaceBetween: {
-    display: 'flex',
-    flexFlow: 'column',
-    justifyContent: 'space-between',
-    [theme.breakpoints.between('md', 'lg')]: {
-      flexFlow: 'row',
+    display: "flex",
+    flexFlow: "column",
+    justifyContent: "space-between",
+    [theme.breakpoints.between("md", "lg")]: {
+      flexFlow: "row",
     },
-    [theme.breakpoints.between('xs', 'md')]: {
-      flexFlow: 'row',
-      '& span': {
-        margin: '0 15px',
+    [theme.breakpoints.between("xs", "md")]: {
+      flexFlow: "row",
+      "& span": {
+        margin: "0 15px",
       },
     },
   },
   flexAlignCenter: {
-    display: 'flex',
-    alignItems: 'center',
-    [theme.breakpoints.between('md', 'lg')]: {
-      flexDirection: 'column',
-      '& img': {
-        transform: 'rotate(90deg)',
-        margin: '60px 0',
+    display: "flex",
+    alignItems: "center",
+    [theme.breakpoints.between("md", "lg")]: {
+      flexDirection: "column",
+      "& img": {
+        transform: "rotate(90deg)",
+        margin: "60px 0",
       },
     },
-    [theme.breakpoints.between('xs', 'md')]: {
-      flexDirection: 'column',
-      '& img': {
-        transform: 'rotate(90deg)',
-        margin: '60px 0',
+    [theme.breakpoints.between("xs", "md")]: {
+      flexDirection: "column",
+      "& img": {
+        transform: "rotate(90deg)",
+        margin: "60px 0",
       },
     },
   },
   flexJustifyCenter: {
-    display: 'flex',
-    justifyContent: 'center',
-    [theme.breakpoints.between('md', 'lg')]: {
-      flexDirection: 'column',
-      alignItems: 'center',
-      '& .multipleLiens': {
-        transform: 'rotate(90deg)',
+    display: "flex",
+    justifyContent: "center",
+    [theme.breakpoints.between("md", "lg")]: {
+      flexDirection: "column",
+      alignItems: "center",
+      "& .multipleLiens": {
+        transform: "rotate(90deg)",
       },
-      '& .specialLine': {
-        marginTop: '60px',
+      "& .specialLine": {
+        marginTop: "60px",
       },
     },
-    [theme.breakpoints.between('xs', 'md')]: {
-      flexDirection: 'column',
-      alignItems: 'center',
-      '& .multipleLiens': {
-        transform: 'rotate(90deg)',
+    [theme.breakpoints.between("xs", "md")]: {
+      flexDirection: "column",
+      alignItems: "center",
+      "& .multipleLiens": {
+        transform: "rotate(90deg)",
       },
-      '& .specialLine': {
-        marginTop: '60px',
+      "& .specialLine": {
+        marginTop: "60px",
       },
     },
   },
   lastContentMap: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    padding: '5% 0',
-    [theme.breakpoints.between('md', 'lg')]: {
-      flexDirection: 'row',
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    padding: "5% 0",
+    [theme.breakpoints.between("md", "lg")]: {
+      flexDirection: "row",
     },
-    [theme.breakpoints.between('xs', 'md')]: {
-      flexDirection: 'row',
-      '& span': {
-        margin: '0 15px',
+    [theme.breakpoints.between("xs", "md")]: {
+      flexDirection: "row",
+      "& span": {
+        margin: "0 15px",
       },
     },
+  },
+  lastContentMapChild: {
+    minHeight: "72px",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
   },
 }));
 
 function Functionality() {
   const classes = useStyles();
   return (
-    <Box sx={{ py: '64px', px: '128px' }}>
+    <Box sx={{ py: "64px", px: "128px" }}>
       <Box className={classes.boxAbout}>
         <Typography
           className={classes.fontTitleAbout}
-          variant='h2'
-          component='div'
+          variant="h2"
+          component="div"
         >
           Functionality
         </Typography>
@@ -199,15 +206,15 @@ function Functionality() {
               >
                 <img
                   src={imgBuildingHeader}
-                  alt='Building'
-                  width='285px'
-                  height='190px'
+                  alt="Building"
+                  width="285px"
+                  height="190px"
                 />
                 <img
                   src={imgLineRight}
-                  className='line'
-                  width='128px'
-                  alt='Line'
+                  className="line"
+                  width="128px"
+                  alt="Line"
                 />
               </Grid>
               <Grid
@@ -215,13 +222,13 @@ function Functionality() {
                 xs={12}
                 lg={3}
                 style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
                 <Typography
-                  variant='p'
+                  variant="p"
                   className={classes.flexAlignCenterJustifyCenter}
                 >
                   Claim NKFE
@@ -236,14 +243,14 @@ function Functionality() {
                 <img
                   src={imgLineRight}
                   className={classes.imageLineRotate}
-                  width='128px'
-                  alt='Line'
+                  width="128px"
+                  alt="Line"
                 />
                 <img
                   src={imgMultiplLines}
-                  className='multipleLines'
-                  width='128'
-                  alt='Line'
+                  className="multipleLines"
+                  width="128"
+                  alt="Line"
                 />
               </Grid>
               <Grid
@@ -251,17 +258,35 @@ function Functionality() {
                 xs={12}
                 lg={3}
                 className={classes.flexAlignSpaceBetween}
+                style={{ display: "flex", flexDirection: "column", padding: 0 }}
               >
-                <Typography variant='p'>Sell on Alcor</Typography>
-                <Typography variant='p'>
+                <Typography
+                  as="div"
+                  variant="p"
+                  className={classes.lastContentMapChild}
+                >
+                  Sell on Alcor
+                </Typography>
+                <Typography
+                  as="div"
+                  variant="p"
+                  className={classes.lastContentMapChild}
+                  style={{ margin: "25px 0" }}
+                >
                   Use NKFE to Make Machines or Sneaker NFT’s if you have a
                   Cobbler
                 </Typography>
-                <Typography variant='p'>Make a new building</Typography>
+                <Typography
+                  as="div"
+                  variant="p"
+                  className={classes.lastContentMapChild}
+                >
+                  Make a new building
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
-          <Grid items xs={12} sx={{ my: '64px' }}>
+          <Grid item xs={12} sx={{ my: "64px" }}>
             <Grid container spacing={2}>
               <Grid
                 items
@@ -271,31 +296,44 @@ function Functionality() {
               >
                 <img
                   src={imgRubberAdvanced}
-                  alt='Building'
-                  width='112px'
-                  height='171px'
+                  alt="Building"
+                  width="112px"
+                  height="171px"
                   style={{
-                    marginTop: '32px',
+                    marginTop: "32px",
                   }}
                 />
-                <Box style={{ display: 'flex' }}>
-                  <img
-                    src={imgRubberApprentice}
-                    alt='Building'
-                    width='112px'
-                    height='171px'
-                    style={{
-                      marginTop: '32px',
-                    }}
-                  />
-                  <Typography variant='p' className={classes.textBorder}>
+                <img
+                  src={imgRubberApprentice}
+                  alt="Building"
+                  width="112px"
+                  height="171px"
+                  style={{
+                    marginTop: "32px",
+                  }}
+                />
+
+                {/* <Box
+                  style={{
+                    display: "flex",
+                    minHeight: "171px",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Typography variant="p" className={classes.textBorder}>
                     + Boost From Laborer
                   </Typography>
-                </Box>
+                </Box> */}
               </Grid>
               <Grid items xs={12} lg={3} className={classes.flexAlignCenter}>
-                <img src={imgLineRight} width='128px' alt='Line' />
-                <Typography variant='p' style={{ marginLeft: '15px' }}>
+                <img
+                  src={imgLineRight}
+                  width="128px"
+                  alt="Line"
+                  style={{ marginLeft: "-105px" }}
+                />
+                <Typography variant="p" style={{ marginLeft: "120px" }}>
                   Claim NKFR
                 </Typography>
               </Grid>
@@ -303,23 +341,42 @@ function Functionality() {
                 <img
                   src={imgLineRight}
                   className={`specialLine ${classes.imageLineRotate}`}
-                  width='128px'
-                  alt='Line'
+                  width="128px"
+                  alt="Line"
                 />
                 <img
                   src={imgMultiplLines}
-                  className='multipleLiens'
-                  width='128px'
-                  alt='Line'
+                  className=""
+                  width="128px"
+                  alt="Line"
                 />
               </Grid>
-              <Grid items xs={12} lg={3} className={classes.lastContentMap}>
-                <Typography variant='p'>Sell on Alcor</Typography>
-                <Typography variant='p'>Make Machine</Typography>
-                <Box style={{ display: 'flex', flexDirection: 'column' }}>
-                  <Typography variant='p'>Use NKFE to Make</Typography>
-                  <Typography variant='p'>Sneaker NFT’s if you </Typography>
-                  <Typography variant='p'>have a Cobbler</Typography>
+              <Grid
+                items
+                xs={12}
+                lg={3}
+                className={classes.lastContentMap}
+                style={{ display: "flex", flexDirection: "column", padding: 0 }}
+              >
+                <Typography
+                  as="div"
+                  variant="p"
+                  className={classes.lastContentMapChild}
+                >
+                  Sell on Alcor
+                </Typography>
+                <Typography
+                  as="div"
+                  variant="p"
+                  className={classes.lastContentMapChild}
+                  style={{ margin: "25px 0" }}
+                >
+                  Make Machine
+                </Typography>
+                <Box className={classes.lastContentMapChild}>
+                  <Typography variant="p">Use NKFE to Make</Typography>
+                  <Typography variant="p">Sneaker NFT’s if you </Typography>
+                  <Typography variant="p">have a Cobbler</Typography>
                 </Box>
               </Grid>
             </Grid>
