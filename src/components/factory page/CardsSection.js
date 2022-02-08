@@ -1,145 +1,188 @@
-import React from 'react';
-import { Typography, Box, Grid, Card, CardContent } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import React from "react";
+import { Typography, Box, Grid, Card, CardContent } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import Button from "@mui/material/Button";
 
 const useStyles = makeStyles((theme) => ({
   boxPositionCenter: {
-    display: 'flex',
-    justifyContent: 'center',
+    display: "flex",
+    justifyContent: "center",
   },
   boxFlexDirectionColumn: {
-    display: 'flex',
-    flexDirection: 'column',
-    [theme.breakpoints.down('md')]: {
-      '& div': {
-        fontSize: '16px',
+    display: "flex",
+    flexDirection: "column",
+    [theme.breakpoints.down("md")]: {
+      "& div": {
+        fontSize: "16px",
       },
     },
-    [theme.breakpoints.down('sm')]: {
-      '& div': {
-        fontSize: '14px',
+    [theme.breakpoints.down("sm")]: {
+      "& div": {
+        fontSize: "14px",
       },
     },
   },
 }));
 
 function CardsSection() {
+  const [factory, setFactory] = React.useState("");
+
+  const handleChange = (event) => {
+    setFactory(event.target.value);
+  };
   const classes = useStyles();
   return (
-    <Box sx={{ mt: '82px' }}>
+    <Box sx={{ mt: "82px" }}>
       <Grid container spacing={2}>
         <Grid sx={{ px: 5 }} item xs={12} lg={8}>
-          <Card style={{ minHeight: '144px' }}>
-            <CardContent>
-              <Typography
-                sx={{ fontSize: 18, textAlign: 'center' }}
-                color='text.secondary'
-                variant='p'
-                component='div'
-              >
-                Build Factory NFT​
-              </Typography>
-              <Box sx={{ mt: 2 }} className={classes.boxPositionCenter}>
-                <Box
-                  sx={{ mx: '24px' }}
-                  className={classes.boxFlexDirectionColumn}
+          <Card style={{ minHeight: "164px", color: "black", display: "flex" }}>
+            <Grid xs={12} lg={3}>
+              <CardContent style={{ textAlign: "center" }}>
+                <Button
+                  variant="contained"
+                  sx={{ fontSize: 18, marginBottom: "10px" }}
                 >
-                  <Typography
-                    sx={{ fontSize: 18 }}
-                    color='text.secondary'
-                    variant='p'
-                    component='div'
+                  Build Factory NFT​
+                </Button>
+                <FormControl sx={{ m: 1, minWidth: 220 }}>
+                  <InputLabel id="demo-simple-select-label">
+                    Select Factory Building
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={factory}
+                    label="Select Factory Building"
+                    onChange={handleChange}
+                    style={{ color: "black" }}
                   >
-                    NKFE
-                  </Typography>
-                  <Typography
-                    color='text.secondary'
-                    variant='h5'
-                    component='div'
-                  >
-                    0000
-                  </Typography>
-                </Box>
+                    <MenuItem value="" style={{ color: "black" }}>
+                      <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={15} style={{ color: "black" }}>
+                      Assembly 
+                    </MenuItem>
+                    <MenuItem value={30} style={{ color: "black" }}>
+                      Manufacturing
+                    </MenuItem>
+                    <MenuItem value={90} style={{ color: "black" }}>
+                      Industrial
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+              </CardContent>
+            </Grid>
+
+            <Grid xs={12} lg={9}>
+              <CardContent>
                 <Box
-                  sx={{ mx: '24px' }}
-                  className={classes.boxFlexDirectionColumn}
+                  sx={{ mt: 2 }}
+                  className={classes.boxPositionCenter}
+                  style={{ justifyContent: "space-evenly" }}
                 >
-                  <Typography
-                    sx={{ fontSize: 18 }}
-                    color='text.secondary'
-                    variant='p'
-                    component='div'
+                  <Box
+                    sx={{ mx: "24px" }}
+                    className={classes.boxFlexDirectionColumn}
                   >
-                    NKFL
-                  </Typography>
-                  <Typography
-                    color='text.secondary'
-                    variant='h5'
-                    component='div'
+                    <Typography
+                      sx={{ fontSize: 18 }}
+                      color="text.secondary"
+                      variant="p"
+                      component="div"
+                    >
+                      NKFE
+                    </Typography>
+                    <Typography
+                      color="text.secondary"
+                      variant="h5"
+                      component="div"
+                    >
+                      0000
+                    </Typography>
+                  </Box>
+                  <Box
+                    sx={{ mx: "24px" }}
+                    className={classes.boxFlexDirectionColumn}
                   >
-                    0000
-                  </Typography>
+                    <Typography
+                      sx={{ fontSize: 18 }}
+                      color="text.secondary"
+                      variant="p"
+                      component="div"
+                    >
+                      NKFL
+                    </Typography>
+                    <Typography
+                      color="text.secondary"
+                      variant="h5"
+                      component="div"
+                    >
+                      0000
+                    </Typography>
+                  </Box>
+                  <Box
+                    sx={{ mx: "24px" }}
+                    className={classes.boxFlexDirectionColumn}
+                  >
+                    <Typography
+                      sx={{ fontSize: 18 }}
+                      color="text.secondary"
+                      variant="p"
+                      component="div"
+                    >
+                      NKFR
+                    </Typography>
+                    <Typography
+                      color="text.secondary"
+                      variant="h5"
+                      component="div"
+                    >
+                      0000
+                    </Typography>
+                  </Box>
+                  <Box
+                    sx={{ mx: "24px" }}
+                    className={classes.boxFlexDirectionColumn}
+                  >
+                    <Typography
+                      sx={{ fontSize: 18 }}
+                      color="text.secondary"
+                      variant="p"
+                      component="div"
+                    >
+                      NKFT
+                    </Typography>
+                    <Typography
+                      color="text.secondary"
+                      variant="h5"
+                      component="div"
+                    >
+                      0000
+                    </Typography>
+                  </Box>
                 </Box>
-                <Box
-                  sx={{ mx: '24px' }}
-                  className={classes.boxFlexDirectionColumn}
-                >
-                  <Typography
-                    sx={{ fontSize: 18 }}
-                    color='text.secondary'
-                    variant='p'
-                    component='div'
-                  >
-                    NKFR
-                  </Typography>
-                  <Typography
-                    color='text.secondary'
-                    variant='h5'
-                    component='div'
-                  >
-                    0000
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{ mx: '24px' }}
-                  className={classes.boxFlexDirectionColumn}
-                >
-                  <Typography
-                    sx={{ fontSize: 18 }}
-                    color='text.secondary'
-                    variant='p'
-                    component='div'
-                  >
-                    NKFT
-                  </Typography>
-                  <Typography
-                    color='text.secondary'
-                    variant='h5'
-                    component='div'
-                  >
-                    0000
-                  </Typography>
-                </Box>
-              </Box>
-            </CardContent>
+              </CardContent>
+            </Grid>
           </Card>
         </Grid>
         <Grid sx={{ px: 5 }} item xs={12} lg={4}>
-          <Card style={{ minHeight: '144px' }}>
-            <CardContent>
-              <Typography
-                sx={{ fontSize: 18, textAlign: 'center' }}
-                color='text.secondary'
-                variant='p'
-                component='div'
+          <Card style={{ minHeight: "164px" }}>
+            <CardContent style={{ textAlign: "center" }}>
+              <Button
+                variant="contained"
+                sx={{ fontSize: 18, marginBottom: "10px" }}
               >
-                Claim NKFE​
-              </Typography>
+                Claim NKFE
+              </Button>
               <Typography
-                sx={{ textAlign: 'center' }}
-                color='text.secondary'
-                variant='h5'
-                component='div'
+                sx={{ textAlign: "center" }}
+                color="text.secondary"
+                variant="h5"
+                component="div"
               >
                 0000​
               </Typography>
