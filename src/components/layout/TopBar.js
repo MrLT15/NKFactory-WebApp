@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   AppBar,
   Box,
@@ -12,31 +12,31 @@ import {
   List,
   ListItem,
   Drawer,
-} from '@mui/material';
-import { makeStyles, useTheme } from '@mui/styles';
+} from "@mui/material";
+import { makeStyles, useTheme } from "@mui/styles";
 
-import DehazeIcon from '@mui/icons-material/Dehaze';
+import DehazeIcon from "@mui/icons-material/Dehaze";
 
-import ModalLogin from './ModalLogin';
+import ModalLogin from "./ModalLogin";
 
 // Logo Website
-import Logo from '../../assets/img/Logo.png';
+import Logo from "../../assets/img/Logo.png";
 
 const styleNavbar = {
-  background: 'transparent',
-  boxShadow: 'none',
+  background: "transparent",
+  boxShadow: "none",
 };
 
 const styleNavbarScrolling = {
-  background: '#010101',
+  background: "#010101",
 };
 
 const useStyles = makeStyles((theme) => ({
   root: {},
   linkStyle: {
-    fontSize: '18px',
-    fontWeight: '400',
-    '&:hover': {
+    fontSize: "18px",
+    fontWeight: "400",
+    "&:hover": {
       color: theme.palette.primary.main,
     },
   },
@@ -55,12 +55,20 @@ function TopBar() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const theme = useTheme();
-  const isMatch = useMediaQuery(theme.breakpoints.down('md'));
+  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  const isUserLoggedIn = localStorage.getItem("accessToken") ? true : false;
+  const userInfo = JSON.parse(localStorage.getItem("user")) || {};
+  console.log(userInfo.fname, localStorage.getItem("user"), "------>");
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("accessToken");
+    window.location.href = "/";
+  };
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
     ) {
       return;
     }
@@ -70,51 +78,55 @@ function TopBar() {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-      role='presentation'
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List className={classes.listDrawer}>
+        {isUserLoggedIn && (
+          <>
+            <ListItem>
+              <Link
+                href="/factory_building"
+                className={classes.linkStyle}
+                underline="none"
+                color="text.primary"
+                sx={{ mx: 4 }}
+              >
+                Factory
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="/cobbler"
+                className={classes.linkStyle}
+                underline="none"
+                color="text.primary"
+                sx={{ mx: 4 }}
+              >
+                Cobbler
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="/sneaker_rack"
+                className={classes.linkStyle}
+                underline="none"
+                color="text.primary"
+                sx={{ mx: 4 }}
+              >
+                Sneaker Vault
+              </Link>
+            </ListItem>
+          </>
+        )}
         <ListItem>
           <Link
-            href='/factory_building'
+            href="#roadMap"
             className={classes.linkStyle}
-            underline='none'
-            color='text.primary'
-            sx={{ mx: 4 }}
-          >
-            Factory
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link
-            href='/cobbler'
-            className={classes.linkStyle}
-            underline='none'
-            color='text.primary'
-            sx={{ mx: 4 }}
-          >
-            Cobbler
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link
-            href='/sneaker_rack'
-            className={classes.linkStyle}
-            underline='none'
-            color='text.primary'
-            sx={{ mx: 4 }}
-          >
-            Sneaker Vault
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link
-            href='#roadMap'
-            className={classes.linkStyle}
-            underline='none'
-            color='text.primary'
+            underline="none"
+            color="text.primary"
             sx={{ mx: 4 }}
           >
             Road Map
@@ -122,10 +134,10 @@ function TopBar() {
         </ListItem>
         <ListItem>
           <Link
-            href='#contactUs'
+            href="#contactUs"
             className={classes.linkStyle}
-            underline='none'
-            color='text.primary'
+            underline="none"
+            color="text.primary"
             sx={{ mx: 4 }}
           >
             Contact Us
@@ -133,17 +145,17 @@ function TopBar() {
         </ListItem>
         <ListItem>
           <Link
-            href='https://niftykicksfactory.gitbook.io/nifty-kicks-factory/'
+            href="https://niftykicksfactory.gitbook.io/nifty-kicks-factory/"
             className={classes.linkStyle}
-            underline='none'
-            color='text.primary'
+            underline="none"
+            color="text.primary"
             sx={{ mx: 4 }}
           >
             Whitepaper
           </Link>
         </ListItem>
         <ListItem>
-          <Button sx={{ mx: 4 }} onClick={handleOpen} variant='contained'>
+          <Button sx={{ mx: 4 }} onClick={handleOpen} variant="contained">
             Login
           </Button>
         </ListItem>
@@ -159,36 +171,36 @@ function TopBar() {
     }
   };
 
-  window.addEventListener('scroll', changeBackground);
+  window.addEventListener("scroll", changeBackground);
   return (
     <>
       <AppBar
         sx={{
-          px: '22px',
-          py: `${navbar ? '' : '12px'}`,
+          px: "22px",
+          py: `${navbar ? "" : "12px"}`,
         }}
         style={navbar ? styleNavbarScrolling : styleNavbar}
-        position={navbar ? 'fixed' : 'static'}
+        position={navbar ? "fixed" : "static"}
       >
         <Toolbar>
-          <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-            <Avatar alt='Logo' src={Logo} sx={{ width: 96, height: 96 }} />
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Avatar alt="Logo" src={Logo} sx={{ width: 96, height: 96 }} />
           </Typography>
           <Box
             sx={{
-              ml: 'auto',
+              ml: "auto",
             }}
           >
             {isMatch ? (
               <>
-                {['top'].map((anchor) => (
+                {["top"].map((anchor) => (
                   <React.Fragment key={anchor}>
                     <IconButton
-                      color='primary'
-                      size='large'
+                      color="primary"
+                      size="large"
                       onClick={toggleDrawer(anchor, true)}
                     >
-                      <DehazeIcon style={{ fontSize: '42px' }} />
+                      <DehazeIcon style={{ fontSize: "42px" }} />
                     </IconButton>
                     <Drawer
                       anchor={anchor}
@@ -202,63 +214,79 @@ function TopBar() {
               </>
             ) : (
               <>
+                {isUserLoggedIn && (
+                  <>
+                    <Link
+                      href="/factory_building"
+                      className={classes.linkStyle}
+                      underline="none"
+                      color="text.primary"
+                      sx={{ mx: 4 }}
+                    >
+                      Factory
+                    </Link>
+                    <Link
+                      href="/cobbler"
+                      className={classes.linkStyle}
+                      underline="none"
+                      color="text.primary"
+                      sx={{ mx: 4 }}
+                    >
+                      Cobbler
+                    </Link>
+                    <Link
+                      href="/sneaker_rack"
+                      className={classes.linkStyle}
+                      underline="none"
+                      color="text.primary"
+                      sx={{ mx: 4 }}
+                    >
+                      Sneaker Vault
+                    </Link>
+                  </>
+                )}
                 <Link
-                  href='/factory_building'
+                  href="#roadMap"
                   className={classes.linkStyle}
-                  underline='none'
-                  color='text.primary'
-                  sx={{ mx: 4 }}
-                >
-                  Factory
-                </Link>
-                <Link
-                  href='/cobbler'
-                  className={classes.linkStyle}
-                  underline='none'
-                  color='text.primary'
-                  sx={{ mx: 4 }}
-                >
-                  Cobbler
-                </Link>
-                <Link
-                  href='/sneaker_rack'
-                  className={classes.linkStyle}
-                  underline='none'
-                  color='text.primary'
-                  sx={{ mx: 4 }}
-                >
-                  Sneaker Vault
-                </Link>
-                <Link
-                  href='#roadMap'
-                  className={classes.linkStyle}
-                  underline='none'
-                  color='text.primary'
+                  underline="none"
+                  color="text.primary"
                   sx={{ mx: 4 }}
                 >
                   Road Map
                 </Link>
                 <Link
-                  href='#contactUs'
+                  href="#contactUs"
                   className={classes.linkStyle}
-                  underline='none'
-                  color='text.primary'
+                  underline="none"
+                  color="text.primary"
                   sx={{ mx: 4 }}
                 >
                   Contact Us
                 </Link>
                 <Link
-                  href='https://niftykicksfactory.gitbook.io/nifty-kicks-factory/'
+                  href="https://niftykicksfactory.gitbook.io/nifty-kicks-factory/"
                   className={classes.linkStyle}
-                  underline='none'
-                  color='text.primary'
+                  underline="none"
+                  color="text.primary"
                   sx={{ mx: 4 }}
                 >
                   Whitepaper
                 </Link>
-                <Button sx={{ mx: 4 }} onClick={handleOpen} variant='contained'>
-                  Login
-                </Button>
+                {isUserLoggedIn ? (
+                  <Button
+                    sx={{ mx: 4 }}
+                    onClick={handleLogout}
+                    variant="contained"
+                  >{`${userInfo?.fname} ${userInfo?.lname}`}</Button>
+                ) : (
+                  <Button
+                    sx={{ mx: 4 }}
+                    onClick={handleOpen}
+                    variant="contained"
+                  >
+                    Login
+                  </Button>
+                )}
               </>
             )}
           </Box>
